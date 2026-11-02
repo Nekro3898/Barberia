@@ -2,6 +2,10 @@
 -- No ejecutar sobre barbershop: la aplicación usa sus tablas existentes.
 -- usuarios guarda clientes; turnos los relaciona mediante id_usuario.
 -- horarios representa la semana; configuracion contiene la duración común.
+create database if not exists `barbershop` default character set utf8mb4 collate utf8mb4_general_ci;
+
+USE `barbershop`;
+
 CREATE TABLE `usuarios` (
   `id` INT PRIMARY KEY AUTO_INCREMENT,
   `nombre_y_apellido` VARCHAR(50) NOT NULL,
