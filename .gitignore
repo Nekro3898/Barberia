@@ -1,0 +1,13 @@
+# Dependencias instaladas: se recuperan con npm ci.
+node_modules/
+frontend/node_modules/
+# Compilación generada por Vite.
+frontend/dist/
+# Configuración privada y datos personales del respaldo.
+.env
+backups/
+# Salida temporal de procesos.
+*.log
+
+# Material personal de estudio: se conserva localmente.
+docs/

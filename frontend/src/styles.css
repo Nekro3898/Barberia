@@ -1,0 +1,784 @@
+/* Paleta y tipografía compartidas mediante variables CSS. */
+:root {
+  font-family: Verdana, Geneva, sans-serif;
+  color: #293e30;
+  background: #eeeee6;
+  font-synthesis: none;
+  --green: #293e30;
+  --cream: #f7f5ed;
+  --paper: #fffef9;
+  --gold: #bd975a;
+  --sand: #eadcc0;
+  --line: #e0e3d7;
+  --muted: #7a8272;
+  --danger: #a34436;
+}
+/* Normalización: el ancho incluye padding y borde. */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+input {
+  font: inherit;
+}
+button,
+a,
+input,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+button,
+summary {
+  touch-action: manipulation;
+  cursor: pointer;
+}
+button {
+  border: 0;
+}
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+button:not(:disabled):active {
+  transform: scale(0.985);
+}
+button {
+  transition:
+    transform 0.12s,
+    background 0.12s;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+h1,
+h2,
+h3 {
+  font-family: "Arial Black", Arial, sans-serif;
+  font-weight: 900;
+}
+h1 {
+  font-size: 26px;
+  letter-spacing: -1.1px;
+}
+h2 {
+  font-size: 17px;
+  letter-spacing: -0.4px;
+}
+svg {
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+/* Contenedor central de la aplicación: ancho móvil limitado en escritorio. */
+.app-shell {
+  max-width: 510px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  background: var(--cream);
+  position: relative;
+}
+/* Cabecera y marca con MV Boli. */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 25px 20px;
+  gap: 12px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  background: none;
+  color: var(--green);
+  min-width: 0;
+  padding: 0;
+  text-align: left;
+}
+.brand > span:last-child {
+  font-family: "MV Boli", "Comic Sans MS", cursive;
+  font-size: 23px;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+.brand-icon {
+  display: grid;
+  place-items: center;
+  width: 45px;
+  height: 45px;
+  background: var(--green);
+  color: #e4c78f;
+  border-radius: 16px;
+  transform: rotate(-5deg);
+  flex-shrink: 0;
+}
+.brand-icon svg {
+  transform: rotate(5deg);
+}
+.icon-button {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  display: inline-grid;
+  place-items: center;
+  background: transparent;
+  color: var(--green);
+  border-radius: 15px;
+}
+.icon-button:hover,
+.icon-button.active {
+  background: #e8ecde;
+}
+.app-shell main {
+  padding: 10px 25px 115px;
+}
+/* Pantalla inicial y accesos grandes. */
+.home {
+  padding-top: 25px;
+}
+.home-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 29px;
+  gap: 15px;
+}
+.small-label {
+  text-transform: capitalize;
+  font-size: 12px;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 9px;
+}
+.home-heading h1 {
+  font-size: 31px;
+}
+.title-dot {
+  color: var(--gold);
+}
+.date-stamp {
+  border: 1px solid #dedfcf;
+  border-radius: 15px;
+  overflow: hidden;
+  min-width: 61px;
+  text-align: center;
+  transform: rotate(5deg);
+  background: var(--paper);
+  box-shadow: 2px 4px 0 #e4e6d9;
+}
+.date-stamp span {
+  display: block;
+  text-transform: uppercase;
+  font-size: 9px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  background: #e8dcc0;
+  padding: 6px 10px;
+  color: #706047;
+}
+.date-stamp strong {
+  display: block;
+  font-family: "Arial Black", Arial, sans-serif;
+  font-size: 27px;
+  padding: 4px 12px 8px;
+}
+.home-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.action-tile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px 23px;
+  min-height: 114px;
+  border-radius: 23px;
+  text-align: left;
+  width: 100%;
+  border: 1px solid transparent;
+}
+.action-tile strong {
+  font-family: "Arial Black", Arial, sans-serif;
+  font-size: 24px;
+  letter-spacing: -0.9px;
+  flex: 1;
+}
+.action-tile > .tile-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.primary-tile {
+  background: var(--green);
+  color: #fffdf5;
+  box-shadow: 0 7px 0 #dfe2d2;
+}
+.primary-tile .tile-icon {
+  color: #e8cd99;
+  background: #ffffff0c;
+}
+.light-tile {
+  background: var(--paper);
+  color: var(--green);
+  border-color: #dce1d1;
+  box-shadow: 0 5px 0 #e9ebdf;
+}
+.light-tile .tile-icon {
+  background: #f0f2e8;
+  color: #667a54;
+}
+.sand-tile {
+  background: var(--sand);
+  color: #554c35;
+  box-shadow: 0 5px 0 #e3dfd0;
+}
+.sand-tile .tile-icon {
+  background: #f8f0df80;
+  color: #8b7143;
+}
+.duration-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: 11px;
+  color: #8a927d;
+  padding-top: 32px;
+}
+.tiny-scissors {
+  margin-left: 13px;
+  color: #b29e77;
+  transform: rotate(-12deg);
+}
+/* Navegación inferior fija, con espacio para el área segura del dispositivo. */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100%, 510px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 12px 22px calc(12px + env(safe-area-inset-bottom));
+  background: #fffef9f5;
+  border-top: 1px solid #e3e6d9;
+  backdrop-filter: blur(12px);
+  z-index: 10;
+}
+.bottom-nav button {
+  background: none;
+  color: #8c947e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  border-radius: 14px;
+  min-height: 56px;
+  font-size: 10px;
+}
+.bottom-nav button.active {
+  color: var(--green);
+  background: #edf0e4;
+}
+/* Encabezados de pantallas y botón de volver. */
+.screen-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0 24px;
+}
+.screen-title h1 {
+  font-size: 25px;
+  flex: 1;
+}
+.screen-title > .icon-button:first-child {
+  margin-left: -12px;
+}
+/* Botón común: tamaños táctiles, estados y variantes. */
+.button {
+  min-height: 54px;
+  padding: 16px 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: bold;
+  background: var(--green);
+  color: white;
+  border: 1px solid transparent;
+}
+.button:hover:not(:disabled) {
+  background: #3d5437;
+}
+.button.outline {
+  background: transparent;
+  border-color: #d8deca;
+  color: var(--green);
+}
+.button.full {
+  width: 100%;
+}
+/* Tarjetas y campos de formularios. */
+.form-card {
+  background: var(--paper);
+  padding: 23px 20px;
+  border: 1px solid var(--line);
+  border-radius: 21px;
+  margin-bottom: 17px;
+}
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin-bottom: 22px;
+  font-size: 12px;
+  color: #526045;
+  font-weight: bold;
+}
+label:last-child {
+  margin-bottom: 0;
+}
+label > span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+label small {
+  font-weight: 400;
+  font-size: 10px;
+  color: var(--muted);
+  margin-left: auto;
+}
+input {
+  background: #f7f8f0;
+  color: #2e3d28;
+  border: 1px solid #dce2d1;
+  border-radius: 12px;
+  padding: 14px 12px;
+  min-height: 52px;
+  width: 100%;
+  min-width: 0;
+  font-size: 16px;
+  font-family: Verdana, sans-serif;
+}
+input::placeholder {
+  color: #9ba48e;
+  font-size: 14px;
+}
+input[type="date"],
+input[type="time"] {
+  appearance: none;
+  -webkit-appearance: none;
+}
+input[type="date"]::-webkit-date-and-time-value {
+  text-align: left;
+}
+input[type="checkbox"] {
+  appearance: auto;
+  accent-color: var(--green);
+  width: 24px;
+  height: 24px;
+  min-height: 24px;
+  flex-shrink: 0;
+}
+.field-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 25px 0 15px;
+  color: #526045;
+}
+.field-heading small {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--muted);
+}
+/* Grilla de horas, selección y disponibilidad. */
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 9px;
+}
+.time-grid button {
+  min-height: 49px;
+  background: #f6f7ef;
+  border: 1px solid #dce1d1;
+  border-radius: 12px;
+  color: #46583b;
+  font-size: 13px;
+  padding: 8px 0;
+}
+.time-grid button.selected {
+  background: var(--green);
+  color: #fff;
+  border-color: var(--green);
+  box-shadow: 0 3px 0 #d8ddcd;
+}
+.time-grid button:disabled {
+  background: #efefe9;
+  color: #acb19f;
+  text-decoration: line-through;
+  opacity: 0.65;
+  border-color: #e9ebdf;
+}
+.save-button {
+  margin-top: 5px;
+}
+.button.delete-button {
+  background: transparent;
+  color: var(--danger);
+  margin-top: 13px;
+  font-weight: 400;
+  font-size: 12px;
+}
+.button.delete-button:hover {
+  background: #f3e7dd;
+}
+.delete-confirm {
+  padding: 24px;
+  border: 1px solid #ebccba;
+  background: #fff3e7;
+  border-radius: 20px;
+  text-align: center;
+  margin-top: 20px;
+  color: var(--danger);
+}
+.delete-confirm h2 {
+  margin: 14px 0 10px;
+}
+.delete-confirm p {
+  font-size: 12px;
+  margin-bottom: 20px;
+  overflow-wrap: anywhere;
+}
+.delete-confirm .button + .button {
+  margin-top: 10px;
+}
+.button.danger {
+  background: var(--danger);
+}
+.inline-empty {
+  font-size: 12px;
+  color: var(--muted);
+  padding: 20px 0;
+  text-align: center;
+}
+/* Selector diario de la agenda. */
+.date-picker {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--paper);
+  padding: 12px 8px;
+  border-radius: 19px;
+  border: 1px solid var(--line);
+}
+.date-label {
+  margin: 0;
+  flex: 1;
+  gap: 6px;
+  min-width: 0;
+}
+.date-label > span {
+  font-size: 10px;
+  color: #89957b;
+}
+.date-label input {
+  background: none;
+  border: 0;
+  padding: 0;
+  min-height: 36px;
+  font-size: 16px;
+}
+.list-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 0 8px;
+  color: #879178;
+  font-size: 11px;
+}
+/* Tarjetas de turnos: hora, cliente y acceso a edición. */
+.appointment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+.appointment {
+  padding: 18px 15px;
+  min-height: 94px;
+  background: var(--paper);
+  border: 1px solid #dce2d1;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+  width: 100%;
+  color: var(--green);
+}
+.appointment-time {
+  font-family: "Arial Black", Arial, sans-serif;
+  font-size: 19px;
+  padding-right: 15px;
+  border-right: 1px solid #e4e7da;
+  flex-shrink: 0;
+}
+.appointment-time small {
+  display: block;
+  font-family: Verdana, sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+  color: #8a967b;
+  margin-top: 7px;
+}
+.appointment-person {
+  flex: 1;
+  min-width: 0;
+}
+.appointment-person strong {
+  font-size: 13px;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+  display: block;
+}
+.appointment-person small {
+  font-size: 10px;
+  color: #8a947b;
+  display: block;
+  margin-top: 5px;
+}
+.edit-circle {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  background: #edf0e5;
+  border-radius: 11px;
+  flex-shrink: 0;
+}
+.search-label {
+  font-size: 10px;
+}
+.empty {
+  text-align: center;
+  padding: 45px 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.empty-symbol {
+  width: 77px;
+  height: 77px;
+  background: #ebeee1;
+  color: #819269;
+  border-radius: 25px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 20px;
+  transform: rotate(-5deg);
+}
+.empty h2 {
+  margin-bottom: 25px;
+  color: #6a785b;
+}
+.empty .button {
+  min-width: 175px;
+}
+.settings-title {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  margin: 29px 0 17px;
+}
+/* Días desplegables y horarios de configuración. */
+.week-settings {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 23px;
+}
+.day-setting {
+  border-bottom: 1px solid #e8eadf;
+}
+.day-setting:last-child {
+  border: 0;
+}
+.day-setting summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 65px;
+  padding: 15px 18px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.day-setting summary::-webkit-details-marker {
+  display: none;
+}
+.day-setting summary > span {
+  flex: 1;
+}
+.day-setting summary small {
+  font-size: 10px;
+  color: #8b957b;
+  font-weight: 400;
+}
+.day-setting[open] summary svg {
+  transform: rotate(90deg);
+}
+.day-content {
+  padding: 0 18px 20px;
+}
+.toggle-label {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 17px;
+}
+.time-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.time-fields label {
+  margin: 0;
+  font-size: 10px;
+}
+.time-fields input {
+  font-size: 14px;
+  padding: 10px;
+}
+/* Mensajes de error o confirmación. */
+.notice {
+  font-size: 12px;
+  line-height: 1.65;
+  padding: 13px 16px;
+  background: #fff0e4;
+  color: #974a35;
+  border-radius: 13px;
+  margin: 0 0 19px;
+  border: 1px solid #e9d4bc;
+  overflow-wrap: anywhere;
+}
+.notice.success {
+  background: #eaf0dd;
+  border-color: #d7e1c6;
+  color: #4d6338;
+}
+.loading {
+  text-align: center;
+  padding: 90px 15px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.loading p {
+  margin: 20px 0;
+  line-height: 1.7;
+}
+/* Adaptación a escritorio sin convertir la app en una página ancha. */
+@media (min-width: 700px) {
+  body {
+    background: radial-gradient(ellipse at 50% 0, #f7f6f0, #e6e8db);
+    background-attachment: fixed;
+  }
+  .app-shell {
+    box-shadow: 0 0 60px #263b2a09;
+    border-left: 1px solid #e2e4d7;
+    border-right: 1px solid #e2e4d7;
+  }
+  .app-header {
+    padding-top: 30px;
+  }
+  .home {
+    padding-top: 32px;
+  }
+  .home-actions {
+    gap: 19px;
+  }
+  .action-tile {
+    min-height: 123px;
+  }
+  .app-shell main {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .home-heading {
+    margin-bottom: 35px;
+  }
+}
+/* Ajustes para teléfonos estrechos. */
+@media (max-width: 360px) {
+  .app-header {
+    padding: 20px 18px;
+  }
+  .app-shell main {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .brand > span:last-child {
+    font-size: 21px;
+  }
+  .action-tile {
+    padding: 22px 18px;
+    gap: 14px;
+    min-height: 105px;
+  }
+  .action-tile strong {
+    font-size: 22px;
+  }
+  .action-tile > .tile-icon {
+    width: 48px;
+    height: 48px;
+  }
+  .time-grid {
+    gap: 7px;
+  }
+  .form-card {
+    padding: 20px 15px;
+  }
+  .appointment {
+    gap: 11px;
+    padding: 17px 12px;
+  }
+  .appointment-time {
+    font-size: 17px;
+    padding-right: 11px;
+  }
+}
+/* Accesibilidad: respeta la preferencia de reducir movimiento. */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

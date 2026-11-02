@@ -1,0 +1,19 @@
+{
+  "name": "barberia-completa",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js",
+    "setup": "node scripts/setup.js",
+    "test": "node --test tests/*.test.js",
+    "build": "npm --prefix frontend run build",
+    "frontend": "npm --prefix frontend run dev"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "mysql2": "^3.24.6"
+  }
+}
